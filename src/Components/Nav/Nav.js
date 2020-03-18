@@ -75,17 +75,15 @@ class NavBar extends Component{
                   <Link className="nav-item nav-link active" to="/">Home</Link>
                   <Link className="nave-item nav-link active" to="/about">About</Link>
                   <Link className="nav-item nav-link active" to="/Contact">Contact</Link>
-                  
-                  <Link className="nav-item nav-link active" to="/logout" onClick = {this.logout}>Logout</Link>
+                  <Link className="nav-item nav-link active" to="/" onClick = {this.logout}>Logout</Link>
                   
               </Nav>
             </Collapse>
           </Navbar>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          <Route exact path="/contact" component={Contact} />
+          
         </div>
         </BrowserRouter>
       )

@@ -14,8 +14,10 @@ class Register extends Component{
     }
     signup(val){
         val.preventDefault();
+        const { history } = this.props;
         fire.auth().createUserWithEmailAndPassword(this.state.email , this.state.password).then((e)=>{
             console.log(e);
+            history.push('/')
         })
         .catch((err)=>{
             console.log(err);

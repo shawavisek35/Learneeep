@@ -34,13 +34,17 @@ class App extends Component{
   }
 
   render(){
-    return(
-      <div className="App">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-        <NavBar />
-        {this.state.user ? (<Home />) : (<Login />)}
-    </div>
-    )
+    
+      return(
+        <div className="App">
+          <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+          <NavBar />
+          
+          
+      </div>
+      )
+    
+    
   }
 }
 
