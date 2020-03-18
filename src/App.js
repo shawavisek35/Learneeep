@@ -1,15 +1,47 @@
-import React from "react";
+import React , {Component} from "react";
 import "./App.css";
 import "./bootstrap.css";
 import NavBar from "./Components/Nav/Nav";
+import fire from "./config/fireKey";
+import Home from "./Components/Home/Home"
+import Login from "./Components/login/login"
 
-function App() {
-  return (
-    <div className="App">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-      <NavBar />
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      user : {}
+    }
+  }
+
+  componentDidMount(){
+    this.authListener();
+  }
+
+  authListener(){
+    fire.auth().onAuthStateChanged((user)=>{
+      if(user){
+        this.setState({
+          user
+        })
+      }
+      else{
+        this.setState({
+          user:null
+        })
+      }
+    })
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+        <NavBar />
+        {this.state.user ? (<Home />) : (<Login />)}
     </div>
-  );
+    )
+  }
 }
 
 export default App;
