@@ -28,6 +28,7 @@ class NavBar extends Component {
     super(props);
 
     this.logout = this.logout.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.state = {
       user: {},
       authed: false
@@ -62,8 +63,9 @@ class NavBar extends Component {
   }
 
   toggle() {
-    const [isOpen, setIsOpen] = useState(false);
-    setIsOpen(!isOpen);
+    this.setState({
+      isOpen : !this.state.isOpen
+    })
   }
   render() {
     if (this.state.authed) {
@@ -76,7 +78,7 @@ class NavBar extends Component {
                 LearNeeP
               </Link>
               <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={this.isOpen} navbar>
+              <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <Link className="nav-item nav-link active" to="/">
                     Home
@@ -117,7 +119,7 @@ class NavBar extends Component {
                 LearNeeP
               </Link>
               <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={this.isOpen} navbar>
+              <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <Link className="nav-item nav-link active" to="/">
                     Home
