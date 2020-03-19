@@ -47,7 +47,8 @@ class NavBar extends Component {
         });
       } else {
         this.setState({
-          user: null
+          user: null,
+          authed : false
         });
       }
     });
