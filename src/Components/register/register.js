@@ -57,7 +57,7 @@ class Register extends Component{
         return(
             <div className="mt-3 bg-light vh-100 container rounded">
                 <h1 className="p-5 text-center">Register</h1>
-                <form>
+                <form className="d-flex justify-content-center mx-auto flex-column w-50">
                     <div className="form-group">
                         <input type="email" className="form-control" name="email" id="email" placeholder="Enter your email" onChange={this.handleChange} value={this.state.email} />
                     </div>

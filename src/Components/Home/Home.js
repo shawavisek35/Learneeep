@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import fire from "../../config/fireKey";
 
+
 class Home extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
   }
-
   render() {
     if (this.props.user) {
       const userT = this.props.newUser.map((newUs,index)=>{
