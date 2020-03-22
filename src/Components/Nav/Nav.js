@@ -54,6 +54,37 @@ class NavBar extends Component {
         });
       }
     });
+
+    fire.firestore().collection("users").get()
+    .then((docs)=>{
+      const newUser = []
+      docs.forEach((doc)=>{
+        const data = doc.data()
+        newUser.push(data)
+      })
+      var x;
+      var newU = [];
+      for(x of newUser) {
+        // console.log(1)
+        // console.log("x",x.email);
+        // console.log("this",this.state.user.email)
+        if(x.email == this.state.user.email){
+          console.log(1)
+          newU.push(x);
+          break;
+        }
+      }
+      //console.log("userrrrrr",newU);
+      this.setState({
+        newUser : newU
+      })
+    })
+
+    .catch((err)=>{
+      console.log(err);
+    });
+
+    
    
   }
 
@@ -71,7 +102,9 @@ class NavBar extends Component {
   }
   render() {
     if (this.state.authed) {
-      console.log(this.state.user);
+      //console.log(this.state.user);
+      //console.log("newUser",this.state.newUser[0]);
+      
       return (
         <BrowserRouter>
           <div>
@@ -104,7 +137,7 @@ class NavBar extends Component {
             <Route
               exact
               path="/"
-              render={props => <Home {...props} user={this.state.user} />}
+              render={props => <Home {...props} user={this.state.user} newUser={this.state.newUser} />}
             />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
@@ -154,11 +187,5 @@ class NavBar extends Component {
   }
 }
 
-// let NavBar = (props) => {
-
-//   return (
-
-//   );
-// };
 
 export default NavBar;
