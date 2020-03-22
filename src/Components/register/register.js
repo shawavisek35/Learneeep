@@ -79,9 +79,9 @@ class Register extends Component{
                     <div className="form-group">
                     <select class="form-control " name="user_type" id="userType" onChange={this.handleChange} value={this.state.user_type}>    
                         <option>Enter your User Type</option>
-                        <option value="Student">Student </option>
-                        <option value="Mentor">Mentor</option>
-                        <option value="Moderator">Moderator</option>
+                        <option value="student">Student </option>
+                        <option value="mentr">Mentor</option>
+                        <option value="moderator">Moderator</option>
 
                     </select>
                     </div>
