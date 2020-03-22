@@ -68,3 +68,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # Learneeep
 Educational Website
+
+### `Project-WorkFlow`
+
+1. StudentNavigationBar(){
+    a.Give Exam
+    b.Check Your Score
+    
+}
+
+2. MentorNavigationBar(){
+    a.Set Question Paper
+    b.set Exam
+    c.Check Answer sheet and give score to each student
+}
