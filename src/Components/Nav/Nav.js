@@ -1,6 +1,6 @@
 import React, { useState, Component } from "react";
 import ReactDOM from "react-dom";
-import App from '../../App';
+import App from "../../App";
 import { Route, Link, BrowserRouter, Redirect } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
@@ -49,7 +49,7 @@ class NavBar extends Component {
       } else {
         this.setState({
           user: null,
-          authed : false
+          authed: false
         });
       }
     });
@@ -57,16 +57,15 @@ class NavBar extends Component {
 
   logout() {
     fire.auth().signOut();
-    return (
-      <Redirect to="/"/>
-    );
+    return <Redirect to="/" />;
   }
 
   toggle() {
     this.setState({
-      isOpen : !this.state.isOpen
-    })
+      isOpen: !this.state.isOpen
+    });
   }
+
   render() {
     if (this.state.authed) {
       console.log(this.state.user);
@@ -80,17 +79,11 @@ class NavBar extends Component {
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                  <Link className="nav-item nav-link active" to="/">
-                    Home
-                  </Link>
-                  <Link className="nave-item nav-link active" to="/about">
-                    About
-                  </Link>
-                  <Link className="nav-item nav-link active" to="/Contact">
-                    Contact
+                  <Link className="nav-item nav-link active btn btn-primary text-light mr-2" to="/">
+                    Dashboard
                   </Link>
                   <Link
-                    className="nav-item nav-link active"
+                    className="nav-item nav-link active btn btn-danger text-light ml-2"
                     to="/"
                     onClick={this.logout}
                   >
@@ -109,8 +102,7 @@ class NavBar extends Component {
           </div>
         </BrowserRouter>
       );
-    }
-    else {
+    } else {
       return (
         <BrowserRouter>
           <div>
@@ -131,10 +123,16 @@ class NavBar extends Component {
                     Contact
                   </Link>
 
-                  <Link className="nav-item nav-link active" to="/register">
+                  <Link
+                    className="nav-item nav-link active btn btn-warning text-light ml-2"
+                    to="/register"
+                  >
                     Register
                   </Link>
-                  <Link className="nav-item nav-link active" to="/login">
+                  <Link
+                    className="nav-item nav-link active btn btn-success text-light ml-2"
+                    to="/login"
+                  >
                     Login
                   </Link>
                 </Nav>
@@ -146,7 +144,6 @@ class NavBar extends Component {
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
           </div>
-          
         </BrowserRouter>
       );
     }
