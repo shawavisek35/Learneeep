@@ -77,7 +77,13 @@ class Register extends Component{
                         <input className="form-control" type="text" name="address" id="address" placeholder="Enter your Address" onChange={this.handleChange} value={this.state.address} />
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" name="user_type" id="userType" placeholder="Enter your User Type" onChange={this.handleChange} value={this.state.user_type} />
+                    <select class="form-control " name="user_type" id="userType" onChange={this.handleChange} value={this.state.user_type}>    
+                        <option>Enter your User Type</option>
+                        <option value="Student">Student </option>
+                        <option value="Mentor">Mentor</option>
+                        <option value="Moderator">Moderator</option>
+
+                    </select>
                     </div>
                     <div className="form-group">
                         <input className="form-control" type="text" name="gender" id="gender" placeholder="Enter your Gender" onChange={this.handleChange} value={this.state.gender} />
