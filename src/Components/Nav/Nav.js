@@ -31,7 +31,8 @@ class NavBar extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       user: {},
-      authed: false
+      authed: false,
+      newUser : []
     };
   }
 
@@ -53,6 +54,7 @@ class NavBar extends Component {
         });
       }
     });
+   
   }
 
   logout() {
