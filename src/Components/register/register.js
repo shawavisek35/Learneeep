@@ -86,7 +86,12 @@ class Register extends Component{
                     </select>
                     </div>
                     <div className="form-group">
-                        <input className="form-control" type="text" name="gender" id="gender" placeholder="Enter your Gender" onChange={this.handleChange} value={this.state.gender} />
+                        <select className="form-control" name="gender" id="gender" placeholder="Enter your Gender" onChange={this.handleChange} value={this.state.gender}>
+                            <option>Select Your Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
                     </div>
                     <button onClick={this.signup} className="btn btn-success">Signup</button>
                 </form>
