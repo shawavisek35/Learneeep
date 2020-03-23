@@ -8,6 +8,7 @@ import Contact from "../Contact/Contact";
 import Login from "../login/login";
 import Register from "../register/register";
 import fire from "../../config/fireKey";
+import PersonalNav from "../personalNav/personalNav";
 import {
   Collapse,
   NavbarToggler,
@@ -102,12 +103,18 @@ class NavBar extends Component {
   render() {
     if (this.state.authed) {
       //console.log(this.state.user);
-      //console.log("newUser",this.state.newUser[0]);
+      var userT = this.state.newUser.map((a,index)=>{
+        return (
+          a.userType
+        )
+      });
+      console.log("userType : ",userT);
       
       return (
         <BrowserRouter>
           <div>
             <Navbar color="light" light expand="md">
+            <PersonalNav userType = {userT} />
               <Link className="navbar-brand" to="/">
                 LearNeeP
               </Link>
@@ -130,14 +137,15 @@ class NavBar extends Component {
             <Route
               exact
               path="/"
-              render={props => <Home {...props} user={this.state.user} newUser={this.state.newUser} />}
+              render={props => <Home {...props} user={this.state.user} newUser={this.state.newUser} userType = {userT} />}
             />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
           </div>
         </BrowserRouter>
       );
-    } else {
+    } 
+    else {
       return (
         <BrowserRouter>
           <div>
