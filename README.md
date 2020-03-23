@@ -82,3 +82,31 @@ Educational Website
     b.set Exam
     c.Check Answer sheet and give score to each student
 }
+
+                                                        student
+                                                           |
+    -----------------------------------------------------------------------------------------------------    
+    |               |                |                |                         |                       | 
+Dashbord        give-exam       exam-report      upcoming-exam     upload-question(can't solved)      Profile
+    |               |               |                   |                       |                       |
+    |               |               |                   |                       |                       |    
+    |               |      previoud-exam-report         |                       |                       |
+    |         running-exam                      coming-populer-exam             |                       |
+    |                                                                           |                       |
+    -------------------------------------------                                 |                       |
+         |                   |                |                                 |                       |
+populer-question     chat-in-question     statistics                            |                       |
+                            |                                                   |                       |
+            -------------------------------------                               |                       |
+            |               |                   |                               |                       |
+     like & Dislike   add-Solution     monitering-question                      |                       |
+                                                                                |                       |
+                                                                                |                       |   
+                                                    -------------------------------------               |
+                                                    |               |                   |               |
+                                            upload-question    question-status     notification         |
+                                                                                                        |
+                                                      ---------------------------------------------------                 
+                                                      |               |               |             |
+                                                edit Profile     cradit-point        Help       invite-friends
+
