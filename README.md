@@ -85,21 +85,22 @@ Educational Website
 
                                                         student
                                                            |
-    -----------------------------------------------------------------------------------------------------    
-    |               |                |                |                         |                       | 
-Dashbord        give-exam       exam-report      upcoming-exam     upload-question(can't solved)      Profile
+    ------------------------------------------------------------------------------------------------------------------    
+    |               |                |                |                         |                       |            |
+Dashbord        give-exam       exam-report      upcoming-exam     upload-question(can't solved)     Profile  Notification
     |               |               |                   |                       |                       |
-    |               |               |                   |                       |                       |    
     |               |      previoud-exam-report         |                       |                       |
-    |         running-exam                      coming-populer-exam             |                       |
+    |    ---------------------                          |                       |                       |    
+    |    |                   |                  coming-populer-exam             |                       |
+    |  run-exam        exam-result                                              |                       |
     |                                                                           |                       |
     -------------------------------------------                                 |                       |
          |                   |                |                                 |                       |
-populer-question     chat-in-question     statistics                            |                       |
+populer-question     question-news-feed   statistics                            |                       |
                             |                                                   |                       |
-            -------------------------------------                               |                       |
-            |               |                   |                               |                       |
-     like & Dislike   add-Solution     monitering-question                      |                       |
+       --------------------------------------                                   |                       |
+       |               |                   |                                    |                       |
+  like & Dislike   add-Solution    monitering-question                          |                       |
                                                                                 |                       |
                                                                                 |                       |   
                                                     -------------------------------------               |
@@ -110,3 +111,12 @@ populer-question     chat-in-question     statistics                            
                                                       |               |               |             |
                                                 edit Profile     cradit-point        Help       invite-friends
 
+
+
+
+
+                                                        Teacher
+                                                           |
+          ----------------------------------------------------------------------------------------------------------
+          |
+                                                           
