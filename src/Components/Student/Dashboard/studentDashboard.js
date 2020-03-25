@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 
-class studentDashboard extends Component {
-    state = {  }
+class StudentDashboard extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+
+        }
+    }
     render() { 
-        return ( <h1>studentDashboard</h1> );
+        
+        console.log("name : ",this.props.name);
+        return(
+            <div className="container">
+                {this.props.name}
+            </div>
+        )
     }
 }
  
-export default studentDashboard;
+export default StudentDashboard;

@@ -38,7 +38,7 @@ class PersonalNav extends Component {
             return (
                 <div>
                 <div id="mySidenav" className="sidenav">
-                    
+                    <a className="h1 active">{this.props.name}<span className="sr-only">(current)</span></a>
                     <a href="#">Give Exam</a>
                     <a href="#">Check Marks</a>
                     <a href="#">Enroll</a>
@@ -46,7 +46,7 @@ class PersonalNav extends Component {
                 </div>
 
                 <div id="main">
-                    <button id="butt" class="btn btn-primary" onClick={this.openNav}>Open</button>
+                    <button id="butt" className="btn btn-primary" onClick={this.openNav}>Open</button>
                 </div>
                 </div>
             )
@@ -63,7 +63,7 @@ class PersonalNav extends Component {
                 </div>
 
                 <div id="main">
-                    <button id="butt" class="btn btn-primary" onClick={this.openNav}>Open</button>
+                    <button id="butt" className="btn btn-primary" onClick={this.openNav}>Open</button>
                 </div>
                 </div>
             )
@@ -79,7 +79,7 @@ class PersonalNav extends Component {
                 </div>
 
                 <div id="main">
-                    <button class="btn btn-primary" onClick={this.openNav}>Open</button>
+                    <button className="btn btn-primary" onClick={this.openNav}>Open</button>
                 </div>
                 </div>
             )

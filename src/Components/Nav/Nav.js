@@ -9,6 +9,7 @@ import Login from "../login/login";
 import Register from "../register/register";
 import fire from "../../config/fireKey";
 import PersonalNav from "../personalNav/personalNav";
+import StudentDashboard from "../Student/Dashboard/studentDashboard";
 import {
   Collapse,
   NavbarToggler,
@@ -108,20 +109,25 @@ class NavBar extends Component {
           a.userType
         )
       });
+      var first_name = this.state.newUser.map((b,index)=>{
+        return(
+          b.firstName
+        )
+      });
       console.log("userType : ",userT);
       
       return (
         <BrowserRouter>
           <div>
             <Navbar color="light" light expand="md">
-            <PersonalNav userType = {userT} />
+            <PersonalNav userType = {userT} name={first_name} />
               <Link className="navbar-brand" to="/">
                 LearNeeP
               </Link>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                  <Link className="nav-item nav-link active btn btn-primary text-light mr-2" to="/">
+                  <Link className="nav-item nav-link active btn btn-primary text-light mr-2" to="/dashboard">
                     Dashboard
                   </Link>
                   <Link
@@ -139,6 +145,7 @@ class NavBar extends Component {
               path="/"
               render={props => <Home {...props} user={this.state.user} newUser={this.state.newUser} userType = {userT} />}
             />
+            
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
           </div>
